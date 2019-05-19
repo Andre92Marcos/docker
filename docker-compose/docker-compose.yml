@@ -1,0 +1,38 @@
+# docker-compose example of two containers on the same network
+
+version: "3"
+
+services:
+  selenium.chrome.webdriver:
+    image: selenium/standalone-chrome:3.14.0-krypton
+    container_name: selenium.chrome.webdriver
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - "4444:4444"
+    networks:
+      twgNetwork:
+        ipv4_address: 172.18.0.3
+
+  twg.selenium:
+    image: andremarcos/twg.selenium
+    container_name: twg
+    volumes:
+      - /tmp/twg.selenium:/tmp/twg.selenium
+    depends_on: 
+      - "selenium.chrome.webdriver"
+    networks:
+      twgNetwork:
+        ipv4_address: 172.18.0.2
+        
+
+
+networks:
+  twgNetwork:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/16
+      
+          
