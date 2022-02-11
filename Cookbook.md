@@ -34,3 +34,12 @@
 **Restart container policy**
 
 	docker container run -d --restart unless-stopped -v /tmp/twg.selenium/:/tmp/twg.selenium/ --name twg.selenium andremarcos/twg.selenium
+
+**Push image to Repo**
+
+	First login to the repo
+		docker login --username:yourusername
+	After that tag your image with the repo name
+		docker image tag <IMAGE_ID> reponame/image_tag
+	Finally push the image
+		docker image push reponame/image_tag
