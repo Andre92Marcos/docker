@@ -42,4 +42,4 @@
 	After that tag your image with the repo name
 		docker image tag <IMAGE_ID> mainreponame/secondaryreponame:image_tag
 	Finally push the image
-		docker image push reponame/image_tag
+		docker image push mainreponame/secondaryreponame:image_tag
