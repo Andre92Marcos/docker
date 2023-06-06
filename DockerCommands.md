@@ -2,6 +2,8 @@
 
 	description: build an image from a Dockerfile
 
+	-f : specify the dockerfile to be used
+
 **docker container**
 
 	description: manages containers
