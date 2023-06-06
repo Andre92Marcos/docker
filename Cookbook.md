@@ -43,3 +43,14 @@
 		docker image tag <IMAGE_ID> mainreponame/secondaryreponame:image_tag
 	Finally push the image
 		docker image push mainreponame/secondaryreponame:image_tag
+
+
+**Run commands inside container**
+
+	Run the following command to list all running Docker containers.
+	docker ps
+	Locate the name of the rarget container in the NAMES column.
+	Start a bash shell by running the following command with the target container name.
+	For example,
+	docker exec -it <container_name> bash
+	https://help.hcltechsw.com/commerce/9.0.0/developer/tasks/tigentercontainer.html
