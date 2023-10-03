@@ -1,3 +1,7 @@
+**Install Docker**
+
+	https://docs.docker.com/engine/install/debian/
+
 **Install oracle xe**
 
 	docker pull alexeiled/docker-oracle-xe-11g
@@ -16,9 +20,6 @@
 
 **Docker Compose**
 
-    #check https://github.com/docker/compose/releases for new release
+	sudo apt-get install docker-compose-plugin
 
-    curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose -o /usr/local/bin/docker-compose
-
-    chmod +x /usr/local/bin/docker-compose
-
+	check https://docs.docker.com/engine/install/debian/ for more details
