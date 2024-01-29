@@ -1,19 +1,28 @@
-# README #
+# docker
 
-Docker examples, cookbook and my docker imagaes
+## Overview
 
-### Cookbook ####
 
-Used for tips related with docker
+## Logs Rotation
 
-### docker-compose dir ###
+Step 1: Go to the Docker daemon configuration file location:
+On Linux: /etc/docker/ directory
 
-Pratical examples of docker-compose
+Step 2: if daemon.json doesnt exist create it with:
 
-### Dockerfile dir ###
+	{
+	"log-driver": "local",
+		"log-opts": {
+			"max-size": "10m",
+			"max-file": "5"
+		}
+	}
 
-Pratical examples of Dockerfiles
+Step 3: Restart docker
 
-### myDockerImages ###
+	systemctl restart docker
 
-Dockerfiles that I create
+More Info:
+
+	https://signoz.io/blog/docker-log-rotation/
+	https://docs.docker.com/config/containers/logging/configure/
